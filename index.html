@@ -190,6 +190,35 @@
     }
   </style>
 
+  <!-- ======= Ticker Styles (Languages + Capabilities) ======= -->
+  <style>
+    :root{
+      --smartserve-primary: var(--primary, #00d4ff);
+      --smartserve-accent:  var(--accent,  #0ea5e9);
+      --smartserve-white:   var(--white,   #ffffff);
+    }
+    .ticker { position:relative; overflow:hidden;
+      background:linear-gradient(90deg, rgba(0,212,255,.08), rgba(14,165,233,.08));
+      border-top:1px solid rgba(0,212,255,.15);
+      border-bottom:1px solid rgba(0,212,255,.15);
+    }
+    .ticker--capabilities{
+      background:linear-gradient(90deg, rgba(14,165,233,.08), rgba(0,212,255,.08));
+    }
+    .ticker__viewport{ display:flex; gap:3rem; padding:14px 0; white-space:nowrap; }
+    .ticker__track{ display:inline-flex; align-items:center; gap:2rem; animation:ticker-scroll 35s linear infinite; }
+    .ticker__item{
+      color:var(--smartserve-white); opacity:.95; font-size:.95rem;
+      padding:6px 14px; border-radius:999px;
+      border:1px solid rgba(0,212,255,.25); background:rgba(0,212,255,.07); backdrop-filter:blur(6px);
+    }
+    .ticker__dot{ width:6px; height:6px; border-radius:50%; background:var(--smartserve-primary); opacity:.7; }
+    .ticker:hover .ticker__track{ animation-play-state:paused; }
+    @media (prefers-reduced-motion:reduce){ .ticker__track{ animation:none; } }
+    body.reduce-motion .ticker__track{ animation:none !important; }
+    @keyframes ticker-scroll{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  </style>
+
   <!-- مكتبات خارجية -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -239,10 +268,147 @@
           24/7 Support
         </div>
       </div>
-      <!-- (تم حذف social-proof كما طلبت) -->
       <p style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600; opacity: 0.95;">
         Built in Bahrain. Designed for Gulf businesses.
       </p>
+    </div>
+  </section>
+
+  <!-- ===== Languages Ticker (NEW) ===== -->
+  <section class="ticker" aria-label="Supported languages">
+    <div class="ticker__viewport">
+      <div class="ticker__track" aria-hidden="false">
+        <span class="ticker__item">Arabic (العربية)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">English</span><span class="ticker__dot"></span>
+        <span class="ticker__item">French (Français)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Spanish (Español)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Hindi (हिन्दी)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Urdu (اردو)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Turkish (Türkçe)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Persian (فارسی)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Tagalog (Filipino)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Chinese (中文)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Russian (Русский)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">German (Deutsch)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Italiano</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Português</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Malay (Bahasa Melayu)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Indonesian (Bahasa Indonesia)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Bengali (বাংলা)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Kurdish (Kurdî)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Japanese (日本語)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Korean (한국어)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Greek (Ελληνικά)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Dutch (Nederlands)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Swedish (Svenska)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Danish (Dansk)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Norwegian (Norsk)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Finnish (Suomi)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Polish (Polski)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Czech (Čeština)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Hungarian (Magyar)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Romanian (Română)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Serbian (Српски)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Bulgarian (Български)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Ukrainian (Українська)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Slovak (Slovenčina)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Slovenian (Slovenščina)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Croatian (Hrvatski)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Hebrew (עברית)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Amharic (አማርኛ)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Swahili (Kiswahili)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Thai (ไทย)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Vietnamese (Tiếng Việt)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Malayalam (മലയാളം)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Tamil (தமிழ்)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Kannada (ಕನ್ನಡ)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Telugu (తెలుగు)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Punjabi (ਪੰਜਾਬੀ)</span>
+      </div>
+      <div class="ticker__track" aria-hidden="true">
+        <span class="ticker__item">Arabic (العربية)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">English</span><span class="ticker__dot"></span>
+        <span class="ticker__item">French (Français)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Spanish (Español)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Hindi (हिन्दी)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Urdu (اردو)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Turkish (Türkçe)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Persian (فارسی)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Tagalog (Filipino)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Chinese (中文)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Russian (Русский)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">German (Deutsch)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Italiano</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Português</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Malay (Bahasa Melayu)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Indonesian (Bahasa Indonesia)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Bengali (বাংলা)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Kurdish (Kurdî)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Japanese (日本語)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Korean (한국어)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Greek (Ελληνικά)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Dutch (Nederlands)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Swedish (Svenska)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Danish (Dansk)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Norwegian (Norsk)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Finnish (Suomi)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Polish (Polski)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Czech (Čeština)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Hungarian (Magyar)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Romanian (Română)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Serbian (Српски)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Bulgarian (Български)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Ukrainian (Українська)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Slovak (Slovenčina)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Slovenian (Slovenščina)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Croatian (Hrvatski)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Hebrew (עברית)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Amharic (አማርኛ)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Swahili (Kiswahili)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Thai (ไทย)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Vietnamese (Tiếng Việt)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Malayalam (മലയാളം)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Tamil (தமிழ்)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Kannada (ಕನ್ನಡ)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Telugu (తెలుగు)</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Punjabi (ਪੰਜਾਬੀ)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Capabilities Ticker (NEW) ===== -->
+  <section class="ticker ticker--capabilities" aria-label="AI agent capabilities">
+    <div class="ticker__viewport">
+      <div class="ticker__track">
+        <span class="ticker__item">AI Agents for WhatsApp</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Instagram DM Automation</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Website Chatbot</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Answer FAQs 24/7</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Qualify Leads</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Route to Human Agent</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Bilingual EN/AR</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Email Alerts to Team</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Monthly Reports</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Secure & Private</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Setup in Days, Not Months</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Built in Bahrain</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Designed for Gulf Businesses</span>
+      </div>
+      <div class="ticker__track" aria-hidden="true">
+        <span class="ticker__item">AI Agents for WhatsApp</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Instagram DM Automation</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Website Chatbot</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Answer FAQs 24/7</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Qualify Leads</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Route to Human Agent</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Bilingual EN/AR</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Email Alerts to Team</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Monthly Reports</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Secure & Private</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Setup in Days, Not Months</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Built in Bahrain</span><span class="ticker__dot"></span>
+        <span class="ticker__item">Designed for Gulf Businesses</span>
+      </div>
     </div>
   </section>
 
@@ -649,127 +815,99 @@
       initGSAP();
     });
   </script>
+
+  <!-- ===== n8n Chat – SmartServe (PLACE BEFORE </body>) ===== -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  <style>
+    :root{
+      --chat--color-primary:#00d4ff;
+      --chat--color-primary-shade-50:#0ec7ef;
+      --chat--color-primary-shade-100:#0ea5e9;
+
+      --chat--color-white:#ffffff;
+      --chat--color-medium:#0a0a0a;
+
+      --chat--background:#ffffff;
+      --chat--color-light:var(--chat--background);
+      --chat--header--background:linear-gradient(90deg,#00d4ff,#0ea5e9);
+      --chat--header--color:#ffffff;
+
+      --chat--font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      --chat--border-radius:.9rem;
+
+      --chat--message--font-size:.9em;
+      --chat--message--padding:.85rem 1rem;
+
+      --chat--window--width:400px;
+      --chat--window--height:600px;
+      --chat--textarea--height:52px;
+
+      --chat--message--bot--background:#f3f7fb;
+      --chat--message--bot--color:#0a0a0a;
+      --chat--message--bot--border:none;
+
+      --chat--message--user--background:var(--chat--color-primary);
+      --chat--message--user--color:#ffffff;
+
+      --chat--toggle--background:var(--chat--color-primary);
+      --chat--toggle--hover--background:var(--chat--color-primary-shade-50);
+      --chat--toggle--active--background:var(--chat--color-primary-shade-100);
+      --chat--toggle--color:#ffffff;
+      --chat--toggle--size:64px;
+
+      --chat--heading--font-size:1rem;
+      --chat--subtitle--font-size:0;
+    }
+    .n8n-chat-wrapper{ background-color:var(--chat--background); }
+    .n8n-chat-message{ max-width:80%; }
+    .n8n-chat-message--bot{ align-self:flex-start; }
+    .n8n-chat-message--user{ align-self:flex-end; }
+    .n8n-chat-header::before{
+      content:""; display:inline-block; width:24px;height:24px;
+      background-image:url('https://smartserve.pro/logo.png');
+      background-size:contain;background-repeat:no-repeat;background-position:center;
+      margin-right:8px;
+    }
+    .n8n-chat-footer, .n8n-chat-branding,
+    [data-testid*="powered-by"],[class*="powered-by"],[id*="powered-by"],
+    [aria-label*="powered by n8n"]{ display:none !important; visibility:hidden !important; }
+    .n8n-chat-input-send-button{
+      background-color:var(--chat--color-primary); color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      width:40px;height:40px;border-radius:50%; border:none; cursor:pointer; transition:background-color .2s ease;
+    }
+    .n8n-chat-input-send-button:hover{ background-color:var(--chat--color-primary-shade-50); }
+    .n8n-chat-input-send-button svg{ fill:currentColor; width:20px;height:20px; }
+    .n8n-chat-welcome-screen-button{ background-color:var(--chat--color-primary)!important; color:#fff!important; }
+    .n8n-chat-welcome-screen-button:hover{ background-color:var(--chat--color-primary-shade-50)!important; }
+    .n8n-chat-toggle-button img{ width:100%;height:100%;object-fit:contain; }
+  </style>
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    createChat({
+      webhookUrl: 'https://smartservebh.app.n8n.cloud/webhook/8cc71396-45ae-44c5-8907-4f83c7e60ac5/chat',
+      initialMessages: [
+        "👋 Welcome to SmartServe AI! I’m your assistant.",
+        "🌐 I can reply in any language — just type in yours.",
+        "How can I help you today? (WhatsApp Bot, Instagram Bot, Website Bot, Pricing)"
+      ],
+      i18n: {
+        en: {
+          title: 'SmartServe – Chat Assistant',
+          subtitle: '',
+          inputPlaceholder: 'Type your message here…',
+          getStarted: 'Start a new conversation',
+          footer: ''
+        }
+      },
+      defaultLanguage: 'en',
+      showWelcomeScreen: true,
+      toggleButton: {
+        icon: '<img src="https://smartserve.pro/logo.png" alt="SmartServe Chat">'
+      }
+    });
+  </script>
+  <!-- ===== /n8n Chat ===== -->
+
 </body>
 </html>
-
-<!-- n8n Chat – SmartServe (paste this right before </body>) -->
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-
-<style>
-  :root{
-    /* SmartServe palette */
-    --chat--color-primary:#00d4ff;                 /* السماوي */
-    --chat--color-primary-shade-50:#0ec7ef;        /* درجة أدكن خفيفة */
-    --chat--color-primary-shade-100:#0ea5e9;       /* الأزرق الخليجي */
-
-    --chat--color-white:#ffffff;
-    --chat--color-medium:#0a0a0a;
-
-    /* خلفية/ستايل الويندو */
-    --chat--background:#ffffff;                    /* نافذة بيضاء مريحة للقراءة */
-    --chat--color-light:var(--chat--background);
-    --chat--header--background:linear-gradient(90deg,#00d4ff,#0ea5e9);
-    --chat--header--color:#ffffff;
-
-    --chat--font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-    --chat--border-radius:.9rem;
-
-    --chat--message--font-size:.9em;
-    --chat--message--padding:.85rem 1rem;
-
-    --chat--window--width: 400px;
-    --chat--window--height: 600px;
-    --chat--textarea--height: 52px;
-
-    --chat--message--bot--background:#f3f7fb;
-    --chat--message--bot--color:#0a0a0a;
-    --chat--message--bot--border:none;
-
-    --chat--message--user--background:var(--chat--color-primary);
-    --chat--message--user--color:#ffffff;
-
-    --chat--toggle--background:var(--chat--color-primary);
-    --chat--toggle--hover--background:var(--chat--color-primary-shade-50);
-    --chat--toggle--active--background:var(--chat--color-primary-shade-100);
-    --chat--toggle--color:#ffffff;
-    --chat--toggle--size:64px;
-
-    --chat--heading--font-size:1rem;
-    --chat--subtitle--font-size:0;
-  }
-
-  .n8n-chat-wrapper{ background-color:var(--chat--background); }
-  .n8n-chat-message{ max-width:80%; }
-  .n8n-chat-message--bot{ align-self:flex-start; }
-  .n8n-chat-message--user{ align-self:flex-end; }
-
-  /* لوجو بالهيدر (عدّل الرابط لو عندك لوجو آخر) */
-  .n8n-chat-header::before{
-    content:"";
-    display:inline-block;
-    width:24px;height:24px;
-    background-image:url('https://smartserve.pro/logo.png');
-    background-size:contain;background-repeat:no-repeat;background-position:center;
-    margin-right:8px;
-  }
-
-  /* إخفاء براندنج n8n – تأكد من توافقه مع شروط الخدمة عندك */
-  .n8n-chat-footer,
-  .n8n-chat-branding,
-  [data-testid*="powered-by"],[class*="powered-by"],[id*="powered-by"],
-  [aria-label*="powered by n8n"]{ display:none !important; visibility:hidden !important; }
-
-  /* زر الإرسال دائري */
-  .n8n-chat-input-send-button{
-    background-color:var(--chat--color-primary);
-    color:#fff; display:flex; align-items:center; justify-content:center;
-    width:40px;height:40px;border-radius:50%; border:none; cursor:pointer;
-    transition:background-color .2s ease;
-  }
-  .n8n-chat-input-send-button:hover{ background-color:var(--chat--color-primary-shade-50); }
-  .n8n-chat-input-send-button svg{ fill:currentColor; width:20px;height:20px; }
-
-  .n8n-chat-welcome-screen-button{
-    background-color:var(--chat--color-primary) !important; color:#fff !important;
-  }
-  .n8n-chat-welcome-screen-button:hover{
-    background-color:var(--chat--color-primary-shade-50) !important;
-  }
-  .n8n-chat-toggle-button img{ width:100%;height:100%;object-fit:contain; }
-</style>
-
-<script type="module">
-  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-  createChat({
-    /* ✅ Webhook الخاص بالبوت لديك */
-    webhookUrl: 'https://smartservebh.app.n8n.cloud/webhook/8cc71396-45ae-44c5-8907-4f83c7e60ac5/chat',
-
-    /* ✅ رسائل ترحيب أولية */
-    initialMessages: [
-      "👋 Welcome to SmartServe AI! I’m your assistant.",
-      "🌐 I can reply in any language — just type in yours.",
-      "How can I help you today? (WhatsApp Bot, Instagram Bot, Website Bot, Pricing)"
-    ],
-
-    /* ✅ نصوص الواجهة */
-    i18n: {
-      en: {
-        title: 'SmartServe – Chat Assistant',
-        subtitle: '',
-        inputPlaceholder: 'Type your message here…',
-        getStarted: 'Start a new conversation',
-        footer: ''
-      }
-    },
-    defaultLanguage: 'en',
-    showWelcomeScreen: true,
-
-    /* ✅ أيقونة زر الفتح (فقاعة الويدجت) */
-    toggleButton: {
-      icon: '<img src="https://smartserve.pro/logo.png" alt="SmartServe Chat">'
-    }
-  });
-</script>
-<!-- /n8n Chat – SmartServe -->
-
