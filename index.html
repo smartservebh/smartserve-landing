@@ -651,3 +651,125 @@
   </script>
 </body>
 </html>
+
+<!-- n8n Chat – SmartServe (paste this right before </body>) -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+
+<style>
+  :root{
+    /* SmartServe palette */
+    --chat--color-primary:#00d4ff;                 /* السماوي */
+    --chat--color-primary-shade-50:#0ec7ef;        /* درجة أدكن خفيفة */
+    --chat--color-primary-shade-100:#0ea5e9;       /* الأزرق الخليجي */
+
+    --chat--color-white:#ffffff;
+    --chat--color-medium:#0a0a0a;
+
+    /* خلفية/ستايل الويندو */
+    --chat--background:#ffffff;                    /* نافذة بيضاء مريحة للقراءة */
+    --chat--color-light:var(--chat--background);
+    --chat--header--background:linear-gradient(90deg,#00d4ff,#0ea5e9);
+    --chat--header--color:#ffffff;
+
+    --chat--font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    --chat--border-radius:.9rem;
+
+    --chat--message--font-size:.9em;
+    --chat--message--padding:.85rem 1rem;
+
+    --chat--window--width: 400px;
+    --chat--window--height: 600px;
+    --chat--textarea--height: 52px;
+
+    --chat--message--bot--background:#f3f7fb;
+    --chat--message--bot--color:#0a0a0a;
+    --chat--message--bot--border:none;
+
+    --chat--message--user--background:var(--chat--color-primary);
+    --chat--message--user--color:#ffffff;
+
+    --chat--toggle--background:var(--chat--color-primary);
+    --chat--toggle--hover--background:var(--chat--color-primary-shade-50);
+    --chat--toggle--active--background:var(--chat--color-primary-shade-100);
+    --chat--toggle--color:#ffffff;
+    --chat--toggle--size:64px;
+
+    --chat--heading--font-size:1rem;
+    --chat--subtitle--font-size:0;
+  }
+
+  .n8n-chat-wrapper{ background-color:var(--chat--background); }
+  .n8n-chat-message{ max-width:80%; }
+  .n8n-chat-message--bot{ align-self:flex-start; }
+  .n8n-chat-message--user{ align-self:flex-end; }
+
+  /* لوجو بالهيدر (عدّل الرابط لو عندك لوجو آخر) */
+  .n8n-chat-header::before{
+    content:"";
+    display:inline-block;
+    width:24px;height:24px;
+    background-image:url('https://smartserve.pro/logo.png');
+    background-size:contain;background-repeat:no-repeat;background-position:center;
+    margin-right:8px;
+  }
+
+  /* إخفاء براندنج n8n – تأكد من توافقه مع شروط الخدمة عندك */
+  .n8n-chat-footer,
+  .n8n-chat-branding,
+  [data-testid*="powered-by"],[class*="powered-by"],[id*="powered-by"],
+  [aria-label*="powered by n8n"]{ display:none !important; visibility:hidden !important; }
+
+  /* زر الإرسال دائري */
+  .n8n-chat-input-send-button{
+    background-color:var(--chat--color-primary);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    width:40px;height:40px;border-radius:50%; border:none; cursor:pointer;
+    transition:background-color .2s ease;
+  }
+  .n8n-chat-input-send-button:hover{ background-color:var(--chat--color-primary-shade-50); }
+  .n8n-chat-input-send-button svg{ fill:currentColor; width:20px;height:20px; }
+
+  .n8n-chat-welcome-screen-button{
+    background-color:var(--chat--color-primary) !important; color:#fff !important;
+  }
+  .n8n-chat-welcome-screen-button:hover{
+    background-color:var(--chat--color-primary-shade-50) !important;
+  }
+  .n8n-chat-toggle-button img{ width:100%;height:100%;object-fit:contain; }
+</style>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    /* ✅ Webhook الخاص بالبوت لديك */
+    webhookUrl: 'https://smartservebh.app.n8n.cloud/webhook/8cc71396-45ae-44c5-8907-4f83c7e60ac5/chat',
+
+    /* ✅ رسائل ترحيب أولية */
+    initialMessages: [
+      "👋 Welcome to SmartServe AI! I’m your assistant.",
+      "🌐 I can reply in any language — just type in yours.",
+      "How can I help you today? (WhatsApp Bot, Instagram Bot, Website Bot, Pricing)"
+    ],
+
+    /* ✅ نصوص الواجهة */
+    i18n: {
+      en: {
+        title: 'SmartServe – Chat Assistant',
+        subtitle: '',
+        inputPlaceholder: 'Type your message here…',
+        getStarted: 'Start a new conversation',
+        footer: ''
+      }
+    },
+    defaultLanguage: 'en',
+    showWelcomeScreen: true,
+
+    /* ✅ أيقونة زر الفتح (فقاعة الويدجت) */
+    toggleButton: {
+      icon: '<img src="https://smartserve.pro/logo.png" alt="SmartServe Chat">'
+    }
+  });
+</script>
+<!-- /n8n Chat – SmartServe -->
+
